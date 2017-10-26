@@ -1,0 +1,9 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+configuration: Release
+before_build:
+  - ps: $Env:PLATFORM_TOOLSET="v141"
+platform: win64
+build:
+  project: nssm.sln
+  verbosity: normal
