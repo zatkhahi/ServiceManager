@@ -1,6 +1,6 @@
-= NSSM: The Non-Sucking Service Manager
+# NSSM: The Non-Sucking Service Manager
 
-![AppVeyor build status](https://ci.appveyor.com/api/projects/status/yn735dboi8yunmus/branch/master?svg=true) 
+[![Build status](https://ci.appveyor.com/api/projects/status/yn735dboi8yunmus/branch/master?svg=true)](https://ci.appveyor.com/project/efficks/nssm/branch/master)
 
 NSSM is a service helper program similar to srvany and cygrunsrv.  It can 
 start any application as an NT service and will restart the service if it 
@@ -8,9 +8,7 @@ fails for any reason.
 
 NSSM also has a graphical service installer and remover.
 
-Full documentation can be found online at
-
-                              http://nssm.cc/
+Full documentation can be found online at http://nssm.cc/
 
 Since version 2.0, the GUI can be bypassed by entering all appropriate 
 options on the command line.
