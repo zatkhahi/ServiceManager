@@ -309,3 +309,7 @@ OpenCover/
 /MSG0040C.bin
 /MSG00410.bin
 /version.h
+/src/messages.h
+/src/messages.rc
+/src/version.h
+*.bin

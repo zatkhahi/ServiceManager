@@ -94,7 +94,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
       <Message>Setting version information</Message>
-      <Command>version.cmd</Command>
+      <Command>src/version.cmd</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Message />
@@ -284,62 +284,51 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="account.cpp" />
-    <ClCompile Include="console.cpp" />
-    <ClCompile Include="env.cpp" />
-    <ClCompile Include="event.cpp" />
-    <ClCompile Include="gui.cpp" />
-    <ClCompile Include="hook.cpp" />
-    <ClCompile Include="imports.cpp" />
-    <ClCompile Include="io.cpp" />
-    <ClCompile Include="nssm.cpp" />
-    <ClCompile Include="process.cpp" />
-    <ClCompile Include="registry.cpp" />
-    <ClCompile Include="service.cpp" />
-    <ClCompile Include="settings.cpp" />
-    <ClCompile Include="utf8.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="account.h" />
-    <ClInclude Include="console.h" />
-    <ClInclude Include="env.h" />
-    <ClInclude Include="event.h" />
-    <ClInclude Include="gui.h" />
-    <ClInclude Include="hook.h" />
-    <ClInclude Include="imports.h" />
-    <ClInclude Include="io.h" />
-    <ClInclude Include="nssm.h" />
-    <ClInclude Include="process.h" />
-    <ClInclude Include="registry.h" />
-    <ClInclude Include="service.h" />
-    <ClInclude Include="settings.h" />
-    <ClInclude Include="utf8.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="nssm.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="nssm.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="messages.mc">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling messages</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mc -u -U %(Filename).mc -r . -h .
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).rc;%(Filename).h;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling messages</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mc -u -U %(Filename).mc -r . -h .
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).rc;%(Filename).h;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling messages</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mc -u -U %(Filename).mc -r . -h .
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).rc;%(Filename).h;%(Outputs)</Outputs>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling messages</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mc -u -U %(Filename).mc -r . -h .
-</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).rc;%(Filename).h;%(Outputs)</Outputs>
+    <CustomBuild Include="src/messages.mc">
+      <Message>Compiling messages</Message>
+      <Command>mc -u -U src/%(Filename).mc -r src -h src</Command>
+      <Outputs>src/%(Filename).rc;src/%(Filename).h;src/%(Outputs)</Outputs>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\account.h" />
+    <ClInclude Include="src\console.h" />
+    <ClInclude Include="src\env.h" />
+    <ClInclude Include="src\event.h" />
+    <ClInclude Include="src\gui.h" />
+    <ClInclude Include="src\hook.h" />
+    <ClInclude Include="src\imports.h" />
+    <ClInclude Include="src\io.h" />
+    <ClInclude Include="src\messages.h" />
+    <ClInclude Include="src\nssm.h" />
+    <ClInclude Include="src\process.h" />
+    <ClInclude Include="src\registry.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\service.h" />
+    <ClInclude Include="src\settings.h" />
+    <ClInclude Include="src\utf8.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\nssm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\nssm.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\account.cpp" />
+    <ClCompile Include="src\console.cpp" />
+    <ClCompile Include="src\env.cpp" />
+    <ClCompile Include="src\event.cpp" />
+    <ClCompile Include="src\gui.cpp" />
+    <ClCompile Include="src\hook.cpp" />
+    <ClCompile Include="src\imports.cpp" />
+    <ClCompile Include="src\io.cpp" />
+    <ClCompile Include="src\nssm.cpp" />
+    <ClCompile Include="src\process.cpp" />
+    <ClCompile Include="src\registry.cpp" />
+    <ClCompile Include="src\service.cpp" />
+    <ClCompile Include="src\settings.cpp" />
+    <ClCompile Include="src\utf8.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
