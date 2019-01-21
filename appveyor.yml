@@ -9,5 +9,5 @@ build:
   verbosity: normal
 artifacts:
   - path: out
-    name: nssm-%APPVEYOR_REPO_TAG_NAME%
+    name: nssm-%APPVEYOR_REPO_COMMIT%
     type: zip
