@@ -94,7 +94,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PreBuildEvent>
       <Message>Setting version information</Message>
-      <Command>src/version.cmd</Command>
+      <Command>src\version.cmd</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Message />
@@ -140,7 +140,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PreBuildEvent>
       <Message>Setting version information</Message>
-      <Command>version.cmd</Command>
+      <Command>src\version.cmd</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Message />
@@ -187,7 +187,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PreBuildEvent>
       <Message>Setting version information</Message>
-      <Command>version.cmd</Command>
+      <Command>src\version.cmd</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Message />
@@ -236,7 +236,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <PreBuildEvent>
       <Message>Setting version information</Message>
-      <Command>version.cmd</Command>
+      <Command>src\version.cmd</Command>
     </PreBuildEvent>
     <CustomBuildStep>
       <Message />
@@ -284,10 +284,10 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="src/messages.mc">
+    <CustomBuild Include="src\messages.mc">
       <Message>Compiling messages</Message>
-      <Command>mc -u -U src/%(Filename).mc -r src -h src</Command>
-      <Outputs>src/%(Filename).rc;src/%(Filename).h;src/%(Outputs)</Outputs>
+      <Command>mc -u -U src\%(Filename).mc -r src -h src</Command>
+      <Outputs>src\%(Filename).rc;src\%(Filename).h;src\%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
