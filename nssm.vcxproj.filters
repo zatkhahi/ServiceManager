@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="src/messages.mc" />
+    <CustomBuild Include="src\messages.mc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\account.h">
@@ -69,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\nssm.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\gtn.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
